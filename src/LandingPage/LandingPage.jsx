@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import emailjs from '@emailjs/browser';
-import "./styles.css";
+import "./style.css";
 
 export const LandingPage = () => {
   const form = useRef();
