@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.11daf704.css",
+    "main.js": "/static/js/main.9de23b6b.js",
+    "static/media/hero__bg.jpg": "/static/media/hero__bg.7f1c36cd8ab23a1a1911.jpg",
+    "static/media/coin__img.png": "/static/media/coin__img.afedb0d9dd3b2c634fb9.png",
+    "static/media/contacts__bg.jpg": "/static/media/contacts__bg.350684a62f992b72707a.jpg",
+    "static/media/phone.png": "/static/media/phone.7fb8d6e3feab0aaea1c2.png",
+    "static/media/vision__img.png": "/static/media/vision__img.95f76f37c25518562a24.png",
+    "static/media/vision__svg-2.svg": "/static/media/vision__svg-2.9b87430513c3e6c3f9b1fee6dbd85445.svg",
+    "static/media/hero__svg.svg": "/static/media/hero__svg.04d0637766b410f525360d839bbbde0b.svg",
+    "static/media/how__svg.svg": "/static/media/how__svg.6ceb98da5de52f00e88e4d04b2f61fa1.svg",
+    "index.html": "/index.html",
+    "static/media/contacts__svg.svg": "/static/media/contacts__svg.59ec1c98dfeba9a5e82f7cb15f12d0c4.svg",
+    "static/media/coin__svg.svg": "/static/media/coin__svg.ece36e66c6114e22ca2ca625f55d3cfd.svg",
+    "static/media/vision__svg.svg": "/static/media/vision__svg.f888b43476603e84ec14461e1bfc1d92.svg",
+    "main.11daf704.css.map": "/static/css/main.11daf704.css.map",
+    "main.9de23b6b.js.map": "/static/js/main.9de23b6b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.11daf704.css",
+    "static/js/main.9de23b6b.js"
+  ]
+}
