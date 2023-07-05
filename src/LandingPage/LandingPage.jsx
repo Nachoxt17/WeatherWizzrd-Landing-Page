@@ -271,7 +271,7 @@ export const LandingPage = () => {
 										required
 									></textarea>
 									<button className="btn" type="submit">
-										Survey
+										Contact
 									</button>
 								</form>
 							</div>
