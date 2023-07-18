@@ -88,17 +88,17 @@ export const LandingPage = () => {
 								</div>
 								<nav>
 									<ul className={showMobileMenu ? 'menu active' : 'menu'}>
-										<li className="menu__item">
+										<li className="menu__item" onClick={() => setShowMobileMenu(!showMobileMenu)}>
 											<a href="#how" className="menu__item-link">
 												How It Works
 											</a>
 										</li>
-										<li className="menu__item">
+										<li className="menu__item" onClick={() => setShowMobileMenu(!showMobileMenu)}>
 											<a href="#contacts" className="menu__item-link">
 												Contact
 											</a>
 										</li>
-										<li className="menu__item">
+										<li className="menu__item" onClick={() => setShowMobileMenu(!showMobileMenu)}>
 											<a
 												href="https://app.willotalent.com/invite/tkZbgs/"
 												target="_blank"
