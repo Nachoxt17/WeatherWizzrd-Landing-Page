@@ -42,6 +42,37 @@ export const LandingPage = () => {
 		e.target.reset()
 	}
 
+	const [data, setData] = useState({
+		firstName: "",
+		lastName: "",
+		email: "",
+		message: "",
+	})
+
+	const {firstName, lastName, email, message} = data;
+
+	const handleChange  = (e) => {
+		setData({...data, [e.target.name]: e.target.value });
+	}
+
+	const handleSubmit  = async (e) => {
+		e.preventDefault();
+
+		try {
+			const response = await fetch("https://v1.nocodeapi.com/anzairutechnical/google_sheets/cWQltESnQdxnEDUF?tabId=Sheet1", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+			body: JSON.stringify([[firstName, lastName, email, message/*, new Date.toLocaleString()*/]]),
+			});
+			await response.json();
+			setData({...data, firstName: "", lastName: "", email: "", message: "" });
+		} catch (err) {
+			console.log(err);
+		}
+	}
+
 	return (
 		<React.Fragment>
 			<div className="wrapper">
@@ -57,17 +88,17 @@ export const LandingPage = () => {
 								</div>
 								<nav>
 									<ul className={showMobileMenu ? 'menu active' : 'menu'}>
-										<li className="menu__item">
+										<li className="menu__item" onClick={() => setShowMobileMenu(!showMobileMenu)}>
 											<a href="#how" className="menu__item-link">
 												How It Works
 											</a>
 										</li>
-										<li className="menu__item">
+										<li className="menu__item" onClick={() => setShowMobileMenu(!showMobileMenu)}>
 											<a href="#contacts" className="menu__item-link">
 												Contact
 											</a>
 										</li>
-										<li className="menu__item">
+										<li className="menu__item" onClick={() => setShowMobileMenu(!showMobileMenu)}>
 											<a
 												href="https://app.willotalent.com/invite/tkZbgs/"
 												target="_blank"
@@ -233,7 +264,8 @@ export const LandingPage = () => {
 							<div className="contacts__item">
 								<h3 className="contacts__subtitle">Get In Touch</h3>
 								<form
-									onSubmit={sendEmail}
+									/*onSubmit={sendEmail}*/
+									onSubmit={handleSubmit}
 									ref={form}
 									className="contacts__form"
 								>
@@ -242,7 +274,9 @@ export const LandingPage = () => {
 											placeholder="First Name"
 											type="text"
 											id="first-name"
-											name="first_name"
+											name="firstName"
+											value={firstName}
+											onChange={handleChange}
 											required
 											className="contacts__input"
 										/>
@@ -250,7 +284,9 @@ export const LandingPage = () => {
 											placeholder="Last Name"
 											type="text"
 											id="last-name"
-											name="last_name"
+											name="lastName"
+											value={lastName}
+											onChange={handleChange}
 											required
 											className="contacts__input"
 										/>
@@ -258,7 +294,9 @@ export const LandingPage = () => {
 											placeholder="Email"
 											type="email"
 											id="email"
-											name="user_email"
+											name="email"
+											value={email}
+											onChange={handleChange}
 											required
 											className="contacts__input"
 										/>
@@ -268,6 +306,8 @@ export const LandingPage = () => {
 										placeholder="Write Message"
 										id="message"
 										name="message"
+										value={message}
+										onChange={handleChange}
 										required
 									></textarea>
 									<button className="btn" type="submit">
