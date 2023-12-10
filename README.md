@@ -1,4 +1,4 @@
-# ANZAIRU LANDING WEBSITE.
+# WEATHERWIZZRD LANDING WEBSITE.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
