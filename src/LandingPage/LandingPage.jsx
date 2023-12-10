@@ -43,33 +43,43 @@ export const LandingPage = () => {
 	}
 
 	const [data, setData] = useState({
-		firstName: "",
-		lastName: "",
-		email: "",
-		message: "",
+		firstName: '',
+		lastName: '',
+		email: '',
+		message: '',
 	})
 
-	const {firstName, lastName, email, message} = data;
+	const { firstName, lastName, email, message } = data
 
-	const handleChange  = (e) => {
-		setData({...data, [e.target.name]: e.target.value });
+	const handleChange = (e) => {
+		setData({ ...data, [e.target.name]: e.target.value })
 	}
 
-	const handleSubmit  = async (e) => {
-		e.preventDefault();
+	const handleSubmit = async (e) => {
+		e.preventDefault()
 
 		try {
-			const response = await fetch("https://v1.nocodeapi.com/anzairutechnical/google_sheets/cWQltESnQdxnEDUF?tabId=Sheet1", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-			body: JSON.stringify([[firstName, lastName, email, message/*, new Date.toLocaleString()*/]]),
-			});
-			await response.json();
-			setData({...data, firstName: "", lastName: "", email: "", message: "" });
+			const response = await fetch(
+				'https://v1.nocodeapi.com/anzairutechnical/google_sheets/cWQltESnQdxnEDUF?tabId=Sheet1',
+				{
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify([
+						[
+							firstName,
+							lastName,
+							email,
+							message /*, new Date.toLocaleString()*/,
+						],
+					]),
+				}
+			)
+			await response.json()
+			setData({ ...data, firstName: '', lastName: '', email: '', message: '' })
 		} catch (err) {
-			console.log(err);
+			console.log(err)
 		}
 	}
 
@@ -88,17 +98,26 @@ export const LandingPage = () => {
 								</div>
 								<nav>
 									<ul className={showMobileMenu ? 'menu active' : 'menu'}>
-										<li className="menu__item" onClick={() => setShowMobileMenu(!showMobileMenu)}>
+										<li
+											className="menu__item"
+											onClick={() => setShowMobileMenu(!showMobileMenu)}
+										>
 											<a href="#how" className="menu__item-link">
 												How It Works
 											</a>
 										</li>
-										<li className="menu__item" onClick={() => setShowMobileMenu(!showMobileMenu)}>
+										<li
+											className="menu__item"
+											onClick={() => setShowMobileMenu(!showMobileMenu)}
+										>
 											<a href="#contacts" className="menu__item-link">
 												Contact
 											</a>
 										</li>
-										<li className="menu__item" onClick={() => setShowMobileMenu(!showMobileMenu)}>
+										<li
+											className="menu__item"
+											onClick={() => setShowMobileMenu(!showMobileMenu)}
+										>
 											<a
 												href="https://app.willotalent.com/invite/tkZbgs/"
 												target="_blank"
@@ -153,8 +172,8 @@ export const LandingPage = () => {
 								</h2>
 								<p className="section__text coin__text">
 									Join our exclusive pre-launch survey, answer a few questions
-									on video, and win an ANZAIRU collectible coin after the
-									project is live!
+									on video, and win a collectible coin after the project is
+									live!
 								</p>
 								<a
 									href="https://app.willotalent.com/invite/tkZbgs/"
@@ -223,7 +242,7 @@ export const LandingPage = () => {
 							<div className="vision__item">
 								<h2 className="section__title">Our Vision</h2>
 								<p className="section__text">
-									The goal of Anzairu is to empower weather science and
+									The goal of Weather Wizzrd is to empower weather science and
 									forecasting, especially in underserved regions. By
 									incentivizing the forecasts with monetary prizes paid in
 									stablecoin to the three most accurate forecasts minted on the
@@ -340,7 +359,7 @@ export const LandingPage = () => {
 							</li>
 							<li>
 								<a
-									href="https://twitter.com/ANZAIRUforecast"
+									href="https://twitter.com/WeatherWizzrd"
 									target="_blank"
 									rel="noopener noreferrer"
 									className="footer__link"
@@ -361,7 +380,7 @@ export const LandingPage = () => {
 							</li>
 							<li>
 								<a
-									href="https://www.linkedin.com/company/anzairu/"
+									href="https://www.linkedin.com/company/weatherwizzrd/"
 									target="_blank"
 									rel="noopener noreferrer"
 									className="footer__link"
@@ -382,7 +401,7 @@ export const LandingPage = () => {
 							</li>
 						</ul>
 					</div>
-					<div className="copy">© Anzairu 2023</div>
+					<div className="copy">© Weather Wizzrd 2023</div>
 				</div>
 			</footer>
 		</React.Fragment>
